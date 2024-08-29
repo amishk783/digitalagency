@@ -27,7 +27,7 @@ export const Slider: React.FC<Props> = ({
           } as React.CSSProperties
         }
         data-direction={direction}
-        className={cn(" slider outline-dotted outline-2 outline-orange-100")}
+        className={cn(" slider ")}
       >
         <div className={cn("flex p-4 inner_slider ", className)}>
           {duplicatedSlides}

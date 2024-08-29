@@ -11,6 +11,7 @@ import Plugins from "@/components/Plugins";
 import { Globe, Star } from "lucide-react";
 import { Slider } from "@/components/Slider/Slider";
 import { Slide } from "@/components/Slider/Slide";
+import { Testimonials } from "@/sections/Testimonials";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +30,7 @@ export default function Home() {
   return (
     <main className=" relative overflow-hidden">
       <div className=" absolute overflow-visible -z-10 h-[818px]  bg-[url('/pattern2.png')] w-full bg-cover bg-center bg-blend-hard-light opacity-40"></div>
-      <div className="container mx-auto -z-10 ">
+      <div className="container mx-auto -z-10 overflow-hidden ">
         <Header />
 
         <section className=" z-10 mb-16">
@@ -101,7 +102,7 @@ export default function Home() {
           </h2>
           <motion.div
             style={{ translateY: yValue }}
-            initial={{ opacity: 1, y: 100 }}
+            // iniatial={{ opacity: 1, y: 100 }}
             transition={{ duration: 2 }}
             className=" flex flex-row gap-2 justify-center items-center fill-white text-white opacity-100 flex-shrink-0 w-16 h-16 rounded-full bg-gradient-radial "
           >
@@ -138,9 +139,9 @@ export default function Home() {
         </div>
       </section>
       <Benefits />
-      <Plugins />
-      <div className=" mb-20">
-        <div className="max-container ">
+
+      <div className="pt-20 mb-20">
+        <div className="max-container mask">
           <Slider className="gap-20" speed={20} direction="left">
             {slides.map((slide) => (
               <Slide
@@ -157,6 +158,8 @@ export default function Home() {
           </Slider>
         </div>
       </div>
+      <Plugins />
+      <Testimonials />
     </main>
   );
 }

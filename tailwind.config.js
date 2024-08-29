@@ -21,6 +21,8 @@ module.exports = {
           "radial-gradient(circle, rgba(128,122,121,1) 49%, rgba(46,44,44,1) 91%, rgba(52,50,50,1) 93%, rgba(51,49,49,1) 100%);",
         "gradient-radial-orange":
           "radial-gradient(64.5947% 78.6119% at 50.1416% 84.4193%, rgba(249, 172, 129, 0) 0%, rgb(255, 132, 63) 43.5%, rgba(241, 73, 36, 0) 100%)",
+        "gradient-radial-orange-reverse":
+          "radial-gradient(84.5947% 78.6119% at 40.1416% 24.4193%, rgba(249, 172, 129, 0) -40%, rgb(255, 132, 63) 90.5%, rgba(241, 73, 36, 0) 100%)",
         "gradient-custom":
           "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(205,89,89,1) 53%, rgba(255,239,0,1) 100%)",
         "gradient-card":

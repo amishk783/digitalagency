@@ -59,15 +59,14 @@ body {
   .slider {
     position: relative;
     width: 100%;
-
     overflow: hidden;
     white-space: nowrap;
-    mask-image: linear-gradient(to right, transparent, #000, transparent);
+
   }
 
   .slider .inner_slider {
-    width: max-content;
-    flex-wrap: nowrap;
+    /* width: min-content; */
+   
     animation: slide var(--slide-speed) var(--animation-direction, forwards) linear infinite;
   }
 
@@ -86,6 +85,10 @@ body {
 
   .slide_item {
     transition: filter 0.5s;
+  }
+
+  .mask {
+    mask-image: linear-gradient(to right, transparent, #000, transparent);
   }
 
 
