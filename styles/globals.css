@@ -29,12 +29,10 @@
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+
   /* color: rgb(var(--foreground-rgb)); */
   background: rgb(var(--background-primary));
-  min-width: 320px;
-  min-height: 100vh;
+
 }
 
 
@@ -52,6 +50,10 @@ body {
     margin: 0 auto;
     width: 1450px;
   }
+
+  .wrapper {
+    background: conic-gradient(rgba(242, 121, 53) 50deg, transparent 90deg);
+  }
 }
 
 @layer components {
@@ -66,7 +68,7 @@ body {
 
   .slider .inner_slider {
     /* width: min-content; */
-   
+
     animation: slide var(--slide-speed) var(--animation-direction, forwards) linear infinite;
   }
 
@@ -90,6 +92,8 @@ body {
   .mask {
     mask-image: linear-gradient(to right, transparent, #000, transparent);
   }
+
+
 
 
 

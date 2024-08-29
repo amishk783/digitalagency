@@ -30,7 +30,14 @@ export const Slider: React.FC<Props> = ({
         className={cn(" slider ")}
       >
         <div className={cn("flex p-4 inner_slider ", className)}>
-          {duplicatedSlides}
+          {slides.map((slide, index) => (
+            <React.Fragment key={`slide-${index}`}>{slide}</React.Fragment>
+          ))}
+          {slides.map((slide, index) => (
+            <React.Fragment key={`slide-duplicate-${index}`}>
+              {slide}
+            </React.Fragment>
+          ))}
         </div>
       </div>
     </>

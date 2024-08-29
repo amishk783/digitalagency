@@ -56,7 +56,7 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-export const Testimonials = () => {
+const Testimonials = () => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -65,25 +65,22 @@ export const Testimonials = () => {
 
   const rotateX = useTransform(scrollYProgress, [0, 0.5], ["180deg", "0deg"]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.5, 1]);
-  const translateY = useTransform(scrollYProgress, [0, 0.5], ["50%", "0%"]);
 
-  const scaleX = useTransform(scrollYProgress, [0, 0.3], [1.2, 1.5]);
-  const scaleY = useTransform(scrollYProgress, [0, 0.3], [0.6, 1.5]);
   return (
-    <div
+    <section
       style={{
         transform: "perspective(1200px)  translateZ(0px)",
         transformOrigin: "top",
         transformStyle: "preserve-3d",
       }}
       ref={ref}
-      className="flex text-primary  items-center flex-col flex-nowrap gap-16  min-h-min  overflow-visible relative p-0 pt-20 w-full"
+      className="flex text-primary  items-center flex-col flex-nowrap gap-16  min-h-min  overflow-hidden relative p-0 md:pt-20 w-full"
     >
       <div className=" flex items-center justify-center flex-col gap-4 overflow-visible o-0 relative w-3/4 ">
         <h2 className="text-2xl bg-gradient-radial-orange-reverse text-transparent bg-clip-text">
           Testimonials
         </h2>
-        <h4 className="text-6xl bg-clip-text bg-gradient-to-r from-white via-zinc-300 to-zinc-700 text-transparent ">
+        <h4 className="text-4xl md:text-6xl bg-clip-text bg-gradient-to-r from-white via-zinc-300 to-zinc-700 text-transparent ">
           Real user experience
         </h4>
         <p>See how our SAAS solution has boosted businesses success.</p>
@@ -93,14 +90,13 @@ export const Testimonials = () => {
           rotateX,
           scale,
           transform: "rotate(-25deg)",
-
         }}
         transition={{ duration: 2 }}
         className=" w-screen   mb-20 mask "
       >
         <Slider className=" flex gap-10">
-          {testimonials.map((testimonial, _index) => (
-            <Slide key={_index}>
+          {testimonials.map((testimonial, index) => (
+            <Slide key={index}>
               <div className="flex flex-col gap-5 bg-card p-10 justify-start will-change-auto rounded-lg w-[472px] transition-transform duration-300 ease-in-out transform hover:scale-105">
                 <h2 className=" whitespace-normal text-xl">
                   {testimonial.review}
@@ -127,8 +123,8 @@ export const Testimonials = () => {
           ))}
         </Slider>
         <Slider direction="right" className=" flex gap-10">
-          {testimonials.map((testimonial, _index) => (
-            <Slide key={_index * 2}>
+          {testimonials.map((testimonial, index) => (
+            <Slide key={index}>
               <div className="flex flex-col gap-5 bg-card p-10 justify-start will-change-auto rounded-lg w-[462px] transition-transform duration-300 ease-in-out transform hover:scale-105">
                 <h2 className=" text-xl whitespace-normal">
                   {testimonial.review}
@@ -155,6 +151,7 @@ export const Testimonials = () => {
           ))}
         </Slider>
       </motion.div>
-    </div>
+    </section>
   );
 };
+export default Testimonials;

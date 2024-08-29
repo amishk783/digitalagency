@@ -14,7 +14,7 @@ const links: LinkItem[] = [
 
 export default function NavBar() {
   return (
-    <div className=" text-lg text-primary">
+    <div className=" text-lg text-primary hidden lg:block">
       <ul className="flex md:flex-row p-5 m-2">
         {links.map((link) => (
           <li className="px-3 py-3" key={link.name}>

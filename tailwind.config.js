@@ -1,3 +1,5 @@
+const { transform } = require("typescript");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -8,6 +10,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        "border-spin": {
+          "100%": {
+            transform: "rotate(-360deg)",
+          },
+        },
+      },
+      animation: {
+        "border-spin": "border-spin 18s linear infinite",
+      },
       backgroundColor: {
         card: "#191919",
         secondary: "var(--background-secondary)",
