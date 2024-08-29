@@ -4,30 +4,96 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-primary: 0, 0, 0;
+  --background-secondary: rgba(218, 197, 167, .05);
+  --primary-color: #6366f1;
+  --secondary-color: #a5b4fc;
+  --border-color: #334155;
+  --text-primary-color: #FFFAFA;
+  --slide-speed: 36s;
+
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0;
+    --background-primary: 0, 0, 0;
+    --background-secondary: rgba(218, 197, 167, .05);
+    --primary-color: #6366f1;
+    --secondary-color: #a5b4fc;
+    --border-color: #334155;
+    --text-primary-color: #FFFAFA;
+    --text-secondary-color: #121314;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  display: flex;
+  place-items: center;
+  /* color: rgb(var(--foreground-rgb)); */
+  background: rgb(var(--background-primary));
+  min-width: 320px;
+  min-height: 100vh;
 }
+
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+
+}
+
+@layer base {
+  .max-container {
+    margin: 0 auto;
+    width: 1450px;
+  }
+}
+
+@layer components {
+
+  .slider {
+    position: relative;
+    width: 100%;
+
+    overflow: hidden;
+    white-space: nowrap;
+    mask-image: linear-gradient(to right, transparent, #000, transparent);
+  }
+
+  .slider .inner_slider {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: slide var(--slide-speed) var(--animation-direction, forwards) linear infinite;
+  }
+
+  .slider[data-direction="right"] {
+    --animation-direction: reverse;
+  }
+
+  .slider[data-direction="left"] {
+    --animation-direction: forwards;
+  }
+
+
+  .inner_slider:hover {
+    animation-play-state: paused;
+  }
+
+  .slide_item {
+    transition: filter 0.5s;
+  }
+
+
+
+  @keyframes slide {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+
   }
 }

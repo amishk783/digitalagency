@@ -10,8 +10,15 @@ const config: Config = {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-custom":
+          "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(205,89,89,1) 53%, rgba(255,239,0,1) 100%)",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "hero-grid": "url('public/bg.jpg')",
+      },
+      textColor: {
+        primary: "var(--background-primary)",
+        purple: "#673AB7",
       },
     },
   },
