@@ -9,6 +9,7 @@ import { Slider } from "@/components/Slider/Slider";
 import { Slide } from "@/components/Slider/Slide";
 import { Pricing } from "@/sections/Pricing";
 import { Info } from "@/sections/Info";
+import { Faq } from "@/sections/Faq";
 
 const Header = dynamic(() => import("@/components/Header/Header"));
 const Benefits = dynamic(() => import("@/sections/Benefits"));
@@ -62,6 +63,7 @@ export default function Home() {
       <Plugins />
       <Testimonials />
       <Pricing />
+      <Faq />
       <Footer />
     </main>
   );

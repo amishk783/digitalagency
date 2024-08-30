@@ -45,7 +45,7 @@ export const Pricing = () => {
   const [isYearly, setISYearly] = useState(false);
 
   return (
-    <section className="w-full text-primary py-40 mb-10">
+    <section className="w-full text-primary py-20 lg:py-40 ">
       <div className="container mx-auto">
         <div className="flex flex-col space-y-3 mb-10 justify-center items-center w-full ">
           <h2 className=" text-4xl sm:text-5xl bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400 text-transparent ">

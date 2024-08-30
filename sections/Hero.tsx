@@ -3,14 +3,14 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="w-full flex justify-center z-10 mb-16 text-primary">
+    <section className="w-full flex justify-center z-10 md:mb-16 text-primary">
       <motion.div
         initial={{ opacity: 0, y: 205 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5 }}
-        className="py-20 my-10 w-[90%]  "
+        className="py-10 sm:py-20 md:my-10 w-[90%]  "
       >
-        <h1 className=" text-2xl md:text-6xl lg:text-8xl flex flex-col font-medium text-center items-center">
+        <h1 className=" text-3xl md:text-6xl lg:text-8xl flex flex-col font-medium text-center items-center">
           Digital Creative Agency
           <span className="break-words">
             WordPress Theme
