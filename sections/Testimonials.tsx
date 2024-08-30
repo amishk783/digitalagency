@@ -64,7 +64,7 @@ const Testimonials = () => {
   });
 
   const rotateX = useTransform(scrollYProgress, [0, 0.5], ["180deg", "0deg"]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0.5, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
   return (
     <section

@@ -1,10 +1,10 @@
-import Card from "./Card";
+import Card from "./PluginCard";
 
 import { pluginsData } from "@/constant/contants";
 
 export default function Plugins() {
   return (
-    <section className="w-full py-10 my-20 text-primary">
+    <section className="w-full py-10 xl:pt-40 my-20 text-primary">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
           <div className="lg:w-1/2 space-y-6 text-center lg:text-left">

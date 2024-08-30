@@ -7,6 +7,8 @@ import Demo from "@/components/Demo";
 import { Star } from "lucide-react";
 import { Slider } from "@/components/Slider/Slider";
 import { Slide } from "@/components/Slider/Slide";
+import { Pricing } from "@/sections/Pricing";
+import { Info } from "@/sections/Info";
 
 const Header = dynamic(() => import("@/components/Header/Header"));
 const Benefits = dynamic(() => import("@/sections/Benefits"));
@@ -56,8 +58,10 @@ export default function Home() {
           </Slider>
         </div>
       </div>
+      <Info />
       <Plugins />
       <Testimonials />
+      <Pricing />
       <Footer />
     </main>
   );
